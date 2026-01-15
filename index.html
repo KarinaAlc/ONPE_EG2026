@@ -3,6 +3,10 @@
   <head>
     <base target="_top">
     <meta charset="UTF-8">
+
+    <!-- 🔴 IMPORTANTE PARA CELULAR: SIN ESTO TODO SE VE “ENANO” -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Encuesta EG 2026 - ONPE</title>
     <style>
       :root {
@@ -50,7 +54,9 @@
         display: block;
         margin-top: 4px;
       }
-      select, input[type="text"], button {
+      select,
+      input[type="text"],
+      button {
         padding: 5px;
         margin-top: 5px;
         min-width: 200px;
@@ -60,7 +66,7 @@
       }
       .boton {
         margin-top: 20px;
-        padding: 8px 16px;
+        padding: 10px 18px;
         font-size: 1rem;
         cursor: pointer;
         background-color: var(--onpe-azul);
@@ -81,6 +87,38 @@
         height: auto;
         margin: 10px auto 20px auto;
         display: block;
+      }
+
+      /* 📱 AJUSTES PARA CELULAR */
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+          font-size: 15px;
+        }
+
+        fieldset {
+          padding: 12px;
+        }
+
+        /* Inputs y selects a lo ancho */
+        select,
+        input[type="text"],
+        button {
+          width: 100%;
+          min-width: 0;
+          box-sizing: border-box;
+        }
+
+        /* Radios en columna para que sea fácil tocar */
+        .inline-label {
+          display: block;
+          margin-right: 0;
+          margin-top: 6px;
+        }
+
+        .grupo-etario label {
+          margin-top: 6px;
+        }
       }
     </style>
   </head>
